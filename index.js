@@ -15,7 +15,7 @@ app.get('/', function(req, res){
 
 app.post('/', function(req, res){
 	const url = req.body.url;
-	console.log(url);
+	console.log("url",url);
 	if(url){
 		qr_code.toDataURL(url, function(err, src){
 			if(err){res.send(err); console.log(err);}
@@ -23,7 +23,7 @@ app.post('/', function(req, res){
 			qr_code.toFile(file_path,url, {
 			  color: {
 			    dark: '#000',  // Black dots
-			    light: '#0000' // Transparent background
+			    light: '#b2b2b2' // Transparent background
 			  }
 			});
 			res.render('index',{QR_code:src,img_src:file_path}); 
