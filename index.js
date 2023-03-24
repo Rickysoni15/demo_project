@@ -23,7 +23,7 @@ app.post('/', function(req, res){
 			qr_code.toFile(file_path,url, {
 			  color: {
 			    dark: '#000',  // Black dots
-			    light: '#b2b2b2' // Transparent background
+			    dark: '#b2b2b2' // Transparent background
 			  }
 			});
 			res.render('index',{QR_code:src,img_src:file_path}); 
